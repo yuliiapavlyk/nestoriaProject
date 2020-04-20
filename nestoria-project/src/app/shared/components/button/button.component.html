@@ -1,0 +1,10 @@
+<input type="button"
+        class="button"
+        [style.width]='width'
+        [style.background]='background'
+        [style.color]='myColor'
+        [style.height]='height'
+        [class.disabled]="disabled"
+        (click)="clickEvent($event)"
+        [value]="label"
+        [attr.id]="buttonId"/>

@@ -1,0 +1,25 @@
+.button {
+  min-width: 100px;
+  height: 35px;
+  border-radius: 3px;
+  border: none;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 400;
+  cursor: pointer;
+}
+.button {
+  background-color: #345591;
+}
+.button:hover {
+  box-shadow: 0 0 6px black;
+}
+.button.disabled {
+  background-color:#a9b1ab;
+  color: black;
+  cursor: default;
+  box-shadow: 0 0 0 black;
+}
