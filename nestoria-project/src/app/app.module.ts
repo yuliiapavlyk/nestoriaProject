@@ -3,16 +3,22 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ButtonComponent } from './shared/components/button/button.component';
+import { PropertySearchModule } from './modules/property-search-page/property-search.module';
+import { SharedComponentsModule } from './shared/components/module';
+import { PropertyListingModule } from './modules/property-listing-page/property-listing.module';
+
 
 @NgModule({
   declarations: [
-    AppComponent,
-    ButtonComponent
+    AppComponent
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SharedComponentsModule,
+    PropertySearchModule,
+    PropertyListingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

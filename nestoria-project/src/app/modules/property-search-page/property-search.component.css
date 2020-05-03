@@ -1,0 +1,41 @@
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.search-block{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-item{
+  width: 70%;
+  flex-grow:5;
+}
+
+.search-input{
+  font-size: 20px;
+  width: 90%;
+}
+
+.button-wrapper{
+  flex-grow:1;
+  margin-left: 5px;
+}
+
+.buttons{
+  display:flex;
+}
+
+.error-block{
+  color:gray;
+}
+
+.result-block{
+  border: 1px solid gray;
+  width: 70%;
+  height: 100%;
+}
