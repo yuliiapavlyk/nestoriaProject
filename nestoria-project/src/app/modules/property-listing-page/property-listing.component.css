@@ -1,0 +1,16 @@
+.nav{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+}
+
+.property-image{
+  width: 800px;
+  height: 600px;
+}
+
+.content{
+  font-size: 18px;
+}
+
