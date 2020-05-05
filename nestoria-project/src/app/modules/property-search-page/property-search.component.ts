@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {buttonType} from '../../app.constants';
+import { Component } from '@angular/core';
 
+import { buttonType } from '../../app.constants';
 
 @Component({
   selector: 'app-property-search',
@@ -14,20 +14,19 @@ export class PropertySearchComponent {
   public errorMessage: string = 'New error';
   public isListLocation: boolean = false;
 
-  public buttonFavor:string = buttonType.buttonFavor;
-  public buttonSearch:string = buttonType.buttonSearch;
-  public buttonLocation:string = buttonType.buttonLocation;
-
+  public buttonFavor: string = buttonType.buttonFavor;
+  public buttonSearch: string = buttonType.buttonSearch;
+  public buttonLocation: string = buttonType.buttonLocation;
 
   public navigateToFavor(): void {
     alert("Navigate to favorite items!")
   }
 
-  public doSearch(): void{
+  public doSearch(): void {
     alert('search');
   }
 
-  public defineLocation(): void{
+  public defineLocation(): void {
     alert('define Location');
   }
 

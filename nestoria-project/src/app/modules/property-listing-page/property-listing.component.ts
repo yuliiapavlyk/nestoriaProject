@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
 import { buttonType } from '../../app.constants';
 
 @Component({
@@ -21,5 +22,4 @@ export class PropertyListingComponent {
   addToFavor(): void{
     alert("add to favor");
   }
-
 }
