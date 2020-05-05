@@ -3,7 +3,7 @@
     <h2>Property Cross</h2>
   </div>
   <div>
-    <app-button [id]="'button-favor'" label="Faves" click="navigateToFavor()"></app-button>
+    <app-button (click)="navigateToFavor()" [id]="buttonFavor" label="Faves"></app-button>
   </div>
 </div>
 
@@ -16,25 +16,24 @@
   <div class="search-item"><input type="text" class="search-input" placeholder="Search..."></div>
   <div class="buttons">
     <div class="button-wrapper">
-      <app-button [id]="'button-search'" label="Go" onclick="doSearch()"></app-button>
+      <app-button (click)="doSearch()" [id]="buttonSearch" label="Go"></app-button>
     </div>
     <div class="button-wrapper">
-      <app-button [id]="'button-location'" label="My location" onclick="defineLocation()"></app-button>
+      <app-button (click)="defineLocation()" [id]="buttonLocation" label="My location"></app-button>
     </div>
   </div>
 </div>
 <br>
-<div  *ngIf="isErrorState" class="error-block">
-  {{errorMessage}}
-</div>
+
+<app-error [errorMessage]="errorMessage" [show]="isErrorState"></app-error>
+
 <div *ngIf="isRecentSearches" class="recent-searches">
   <p> Recent searches: </p>
   <div class="result-block">
   </div>
 </div>
 <div *ngIf="isListLocation" class="location-list">
-    <p> Please select a location below: </p>
-    <div class="result-block">
-    </div>
+  <p> Please select a location below: </p>
+  <div class="result-block">
   </div>
-
+</div>

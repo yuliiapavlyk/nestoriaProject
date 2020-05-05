@@ -1,20 +1,18 @@
 <div class="nav">
-    <div>
-      <h2>Property Details</h2>
-    </div>
-    <div>
-      <app-button [id]="'button-plus'"
-      label="Add"
-      click="addToFavor()"></app-button>
-    </div>
+  <div>
+    <h2>Property Details</h2>
+  </div>
+  <div>
+    <app-button (click)="addToFavor()" [id]="buttonFavor" label="Add"></app-button>
+  </div>
 </div>
 <div class="content">
-<div class="property-price">{{fakeProperty.price}}</div>
-<div class="property-location">{{fakeProperty.location}}</div>
-<div class="property-image"><img [src]="fakeProperty.link" alt="property-picture" class="property-image"></div>
-<div class="property-info">
-  {{fakeProperty.bedCount}} bed(s),{{fakeProperty.bathroomsCount}} bathrooms
-</div>
-<br>
-<div class="property-description">{{fakeProperty.description}}</div>
+  <div class="property-price">{{fakeProperty.price}}</div>
+  <div class="property-location">{{fakeProperty.location}}</div>
+  <div class="property-image"><img [src]="fakeProperty.link" alt="property-picture" class="property-image"></div>
+  <div class="property-info">
+    {{fakeProperty.bedCount}} bed(s),{{fakeProperty.bathroomsCount}} bathrooms
+  </div>
+  <br>
+  <div class="property-description">{{fakeProperty.description}}</div>
 </div>
