@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { buttonType } from '../../app.constants';
+import { Product } from 'src/app/shared/models';
 
 @Component({
   selector: 'app-property-search',
@@ -8,6 +9,7 @@ import { buttonType } from '../../app.constants';
   styleUrls: ['./property-search.component.scss']
 })
 export class PropertySearchComponent {
+
 
   public isErrorState: boolean = false;
   public isRecentSearches: boolean = false;
@@ -17,6 +19,8 @@ export class PropertySearchComponent {
   public buttonFavor: string = buttonType.buttonFavor;
   public buttonSearch: string = buttonType.buttonSearch;
   public buttonLocation: string = buttonType.buttonLocation;
+
+  public products:Product[] = [];
 
   public navigateToFavor(): void {
     alert("Navigate to favorite items!")
