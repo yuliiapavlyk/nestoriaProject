@@ -1,0 +1,14 @@
+.layout{
+  background: #345591;
+  color:white;
+  text-align: center;
+  height: 50px;
+  font-size: 30px;
+  text-align: center;
+  font-weight: 100;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
+}
+
+.content{
+ margin: 10px;
+}

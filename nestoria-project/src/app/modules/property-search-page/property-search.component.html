@@ -1,0 +1,39 @@
+<div class="nav">
+  <div>
+    <h2>Property Cross</h2>
+  </div>
+  <div>
+    <app-button (click)="navigateToFavor()" [id]="buttonFavor" label="Faves"></app-button>
+  </div>
+</div>
+
+<div>
+  Use the form below to search for houses to buy. You can search by place-name, postcode, or click 'My location', to
+  search in your current location!
+</div>
+<br>
+<div class="search-block">
+  <div class="search-item"><input type="text" class="search-input" placeholder="Search..."></div>
+  <div class="buttons">
+    <div class="button-wrapper">
+      <app-button (click)="doSearch()" [id]="buttonSearch" label="Go"></app-button>
+    </div>
+    <div class="button-wrapper">
+      <app-button (click)="defineLocation()" [id]="buttonLocation" label="My location"></app-button>
+    </div>
+  </div>
+</div>
+<br>
+
+<app-error [errorMessage]="errorMessage" [show]="isErrorState"></app-error>
+
+<div *ngIf="isRecentSearches" class="recent-searches">
+  <p> Recent searches: </p>
+  <div class="result-block">
+  </div>
+</div>
+<div *ngIf="isListLocation" class="location-list">
+  <p> Please select a location below: </p>
+  <div class="result-block">
+  </div>
+</div>
