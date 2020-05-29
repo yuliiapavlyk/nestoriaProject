@@ -1,0 +1,8 @@
+<p class="title">List of items</p>
+<div *ngFor="let product of products">
+  <app-product-item
+  [link]="product.link"
+  [location]="product.location"
+  [price]="product.price"></app-product-item>
+  <br>
+</div>

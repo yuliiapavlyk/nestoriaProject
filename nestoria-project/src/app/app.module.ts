@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Provider } from '@angular/core';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -7,6 +9,14 @@ import { PropertySearchModule } from './modules/property-search-page/property-se
 import { SharedComponentsModule } from './shared/components/module';
 import { PropertyListingModule } from './modules/property-listing-page/property-listing.module';
 
+import { FakeBackendInterceptor } from './shared/services/interceptor.service';
+import { SearchResultsPageModule } from './modules/search-results-page/search-results-page.module';
+
+const INTERCEPTOR_PROVIDER: Provider = {
+  provide: HTTP_INTERCEPTORS,
+  useClass: FakeBackendInterceptor,
+  multi: true
+}
 
 @NgModule({
   declarations: [
@@ -14,13 +24,15 @@ import { PropertyListingModule } from './modules/property-listing-page/property-
 
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     SharedComponentsModule,
     PropertySearchModule,
-    PropertyListingModule
+    PropertyListingModule,
+    SearchResultsPageModule
   ],
-  providers: [],
+  providers: [INTERCEPTOR_PROVIDER],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
