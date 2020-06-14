@@ -10,5 +10,6 @@ export class ProductItemComponent {
   @Input() link: string;
   @Input() price: number;
   @Input() location: string;
+  @Input() description: string;
 
 }

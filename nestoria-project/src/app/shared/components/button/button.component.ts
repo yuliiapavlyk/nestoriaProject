@@ -11,21 +11,9 @@ export class ButtonComponent {
 
 @Input() disabled: boolean = false;
 
-@Input() background: string = "";
-
-@Input("text-color") myColor: string ;
-
 @Input() width: string = '';
 
-@Input() height: string = '';
-
 @Input("id") buttonId: string;
-
-public clickEvent(e: MouseEvent) {
-  if (!this.disabled) {
-    console.log("click worked")
-  }
-}
 
 }
 

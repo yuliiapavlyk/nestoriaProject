@@ -10,7 +10,8 @@ import { SharedComponentsModule } from './shared/components/module';
 import { PropertyListingModule } from './modules/property-listing-page/property-listing.module';
 
 import { FakeBackendInterceptor } from './shared/services/interceptor.service';
-import { SearchResultsPageModule } from './modules/search-results-page/search-results-page.module';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -30,7 +31,7 @@ const INTERCEPTOR_PROVIDER: Provider = {
     SharedComponentsModule,
     PropertySearchModule,
     PropertyListingModule,
-    SearchResultsPageModule
+    BrowserAnimationsModule
   ],
   providers: [INTERCEPTOR_PROVIDER],
   bootstrap: [AppComponent]

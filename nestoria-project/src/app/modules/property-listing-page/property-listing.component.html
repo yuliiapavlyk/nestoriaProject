@@ -3,16 +3,27 @@
     <h2>Property Details</h2>
   </div>
   <div>
-    <app-button (click)="addToFavor()" [id]="buttonFavor" label="Add"></app-button>
+    <app-button (click)="goToFavorite()" [id]="buttonGoFavorite" label="Favorite"></app-button>
   </div>
 </div>
-<div class="content">
-  <div class="property-price">{{fakeProperty.price}}</div>
-  <div class="property-location">{{fakeProperty.location}}</div>
-  <div class="property-image"><img [src]="fakeProperty.link" alt="property-picture" class="property-image"></div>
-  <div class="property-info">
-    {{fakeProperty.bedCount}} bed(s),{{fakeProperty.bathroomsCount}} bathrooms
-  </div>
-  <br>
-  <div class="property-description">{{fakeProperty.description}}</div>
+<div class="card-wrapper">
+  <mat-card class="card">
+    <mat-card-header class="card-wrapper">
+      <mat-card-title>City: {{item.location}}</mat-card-title>
+      <mat-card-subtitle> Price: {{item.price}} $</mat-card-subtitle>
+    </mat-card-header>
+    <div class="card-wrapper">
+      <img mat-card-image [src]="item.link" alt="item-image" class="image">
+    </div>
+    <mat-card-content>
+      <p>
+        This apartment includes: {{item.bedCount}} bed(s),{{item.bathroomsCount}} bathrooms
+      </p>
+      <div class="property-description">{{item.description}}</div>
+    </mat-card-content>
+    <mat-card-actions class="card-wrapper">
+      <button mat-stroked-button color="primary" (click)="addToFavorite()">Add to favorite</button>
+      <button mat-stroked-button color="primary" (click)="navigateToSearch()">Go to main</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
