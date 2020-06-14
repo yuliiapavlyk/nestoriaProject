@@ -10,52 +10,61 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-property-search',
   templateUrl: './property-search.component.html',
-  styleUrls: ['./property-search.component.scss']
+  styleUrls: ['./property-search.component.scss'],
 })
-export class PropertySearchComponent implements OnInit , OnDestroy {
-
+export class PropertySearchComponent implements OnInit, OnDestroy {
   public products: Product[];
+  public items: Product[];
   private subscriptions: Subscription = new Subscription();
   public isErrorState: boolean = false;
   public isRecentSearches: boolean = false;
   public errorMessage: string = 'New error';
   public isListLocation: boolean = false;
-  public value:string = '';
+  public value: string = '';
 
   public buttonFavor: string = buttonType.buttonFavor;
   public buttonSearch: string = buttonType.buttonSearch;
   public buttonLocation: string = buttonType.buttonLocation;
 
-  constructor(private _productService: ProductService,
-              private _router:Router){
-
-  }
+  constructor(
+    private _productService: ProductService,
+    private _router: Router
+  ) {}
 
   public navigateToFavor(): void {
-    alert("Navigate to favorite items!")
+    alert('Navigate to favorite items!');
   }
 
   public doSearch(): void {
-    alert('search');
+    const searchText = this.value.toLocaleLowerCase();
+    if (this.value.trim().length > 0) {
+      this.products = this.items.filter((it) => {
+        return (
+          it.location.toLocaleLowerCase().indexOf(searchText) > -1 ||
+          it.description.toLocaleLowerCase().indexOf(searchText) > -1
+        );
+      });
+    }
   }
 
   public defineLocation(): void {
     alert('define Location');
   }
 
-  public navigateToItem(id:number):void {
+  public navigateToItem(id: number): void {
     this._router.navigate(['item', id]);
   }
 
-  public ngOnInit():void {
-    this.subscriptions.add(this._productService.getProducts()
-    .subscribe(products => {
-      this.products = products;
-    }));
+  public ngOnInit(): void {
+    this.subscriptions.add(
+      this._productService.getProducts().subscribe((products) => {
+        this.products = products;
+        this.items = products;
+      })
+    );
   }
 
-  ngOnDestroy():void {
-    this.subscriptions.unsubscribe()
+  ngOnDestroy(): void {
+    this.subscriptions.unsubscribe();
   }
-
 }
