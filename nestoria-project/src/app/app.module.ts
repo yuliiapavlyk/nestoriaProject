@@ -12,6 +12,7 @@ import { PropertyListingModule } from './modules/property-listing-page/property-
 import { FakeBackendInterceptor } from './shared/services/interceptor.service';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FavouritesPageModule } from './modules/favourites-page/favourites-page.module';
 
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,
@@ -31,7 +32,8 @@ const INTERCEPTOR_PROVIDER: Provider = {
     SharedComponentsModule,
     PropertySearchModule,
     PropertyListingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FavouritesPageModule
   ],
   providers: [INTERCEPTOR_PROVIDER],
   bootstrap: [AppComponent]

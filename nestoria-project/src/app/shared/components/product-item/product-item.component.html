@@ -9,7 +9,7 @@
       {{description}}
     </p>
     <div class="button-wrapper">
-    <button mat-stroked-button color="primary">Add to favorite</button>
+    <button mat-stroked-button color="primary" (click)="addToFavorite(id,$event)" >Add to favorite </button>
   </div>
   </mat-card-content>
 </mat-card>

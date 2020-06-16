@@ -22,8 +22,8 @@
       <div class="property-description">{{item.description}}</div>
     </mat-card-content>
     <mat-card-actions class="card-wrapper">
-      <button mat-stroked-button color="primary" (click)="addToFavorite()">Add to favorite</button>
-      <button mat-stroked-button color="primary" (click)="navigateToSearch()">Go to main</button>
+      <button mat-stroked-button color="primary" (click)="addToFavorite(item.id, $event)">Add to favorite</button>
+      <button mat-stroked-button color="primary" (click)="navigateToSearch()">Back to main</button>
     </mat-card-actions>
   </mat-card>
 </div>

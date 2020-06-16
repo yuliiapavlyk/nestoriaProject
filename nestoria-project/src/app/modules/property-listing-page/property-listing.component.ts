@@ -9,42 +9,42 @@ import { Product } from 'src/app/shared/models';
 @Component({
   selector: 'app-property-listing',
   templateUrl: './property-listing.component.html',
-  styleUrls: ['./property-listing.component.scss']
+  styleUrls: ['./property-listing.component.scss'],
 })
 export class PropertyListingComponent implements OnInit {
-
   public buttonFavor: string = buttonType.buttonFavor;
-  public buttonBack: string =  buttonType.buttonBack;
-  public buttonGoFavorite: string =  buttonType.buttonGoFavorite;
+  public buttonBack: string = buttonType.buttonBack;
+  public buttonGoFavorite: string = buttonType.buttonGoFavorite;
   public itemId: number;
   public item: Product;
 
   private subscriptions: Subscription = new Subscription();
 
-  constructor(private _productService: ProductService,
-              private _activateRoute:  ActivatedRoute,
-              private _router: Router){
-  }
+  constructor(
+    private _productService: ProductService,
+    private _activateRoute: ActivatedRoute,
+    private _router: Router
+  ) {}
 
-  public addToFavorite(): void{
-    alert("add to favor");
+  public addToFavorite(id: number, $event): void {
+    this._productService.addToFavorite(id, $event);
   }
 
   public goToFavorite(): void {
-    alert("open favorite items");
+    this._router.navigate(['favourites']);
   }
 
-  ngOnInit():void {
+  ngOnInit(): void {
     this.itemId = this._activateRoute.snapshot.params['id'];
 
-    this.subscriptions.add(this._productService.getProductById(this.itemId)
-    .subscribe(product => {
-      this.item = product;
-    }));
+    this.subscriptions.add(
+      this._productService.getProductById(this.itemId).subscribe((product) => {
+        this.item = product;
+      })
+    );
   }
 
-  public navigateToSearch(): void{
-      this._router.navigate(['items']);
+  public navigateToSearch(): void {
+    this._router.navigate(['items']);
   }
-
 }

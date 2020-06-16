@@ -25,9 +25,6 @@
     <div class="button-wrapper">
       <app-button (click)="doSearch()" [id]="buttonSearch" label="Go"></app-button>
     </div>
-    <div class="button-wrapper">
-      <app-button (click)="defineLocation()" [id]="buttonLocation" label="My location"></app-button>
-    </div>
   </div>
 </div>
 <br>
@@ -46,7 +43,7 @@
 </div>
 <div class="items-wrapper">
   <div *ngFor="let product of products" (click)="navigateToItem(product.id)" class="item-wrapper">
-    <app-product-item [link]="product.link" [location]="product.location" [price]="product.price"
+    <app-product-item [id]="product.id" [link]="product.link" [location]="product.location" [price]="product.price"
       [description]="product.description"></app-product-item>
     <br>
   </div>

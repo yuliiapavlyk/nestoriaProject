@@ -6,15 +6,9 @@ import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 
 export class FakeBackendInterceptor implements HttpInterceptor {
 
-   // console.log('HTTP REQUEST INTERCEPTED BY THE MOCKED BACKEND');
-    //return of(new HttpResponse({body: products}));}
-
-
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-      console.log("blabla");
       const { url, method, headers, body } = request;
 
-      // wrap in delayed observable to simulate server api call
       return of(null)
       .pipe(mergeMap(handleRoute))
       .pipe(materialize())

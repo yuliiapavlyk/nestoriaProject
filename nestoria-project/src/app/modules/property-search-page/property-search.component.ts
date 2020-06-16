@@ -25,6 +25,7 @@ export class PropertySearchComponent implements OnInit, OnDestroy {
   public buttonFavor: string = buttonType.buttonFavor;
   public buttonSearch: string = buttonType.buttonSearch;
   public buttonLocation: string = buttonType.buttonLocation;
+  public dataSource: string;
 
   constructor(
     private _productService: ProductService,
@@ -32,7 +33,7 @@ export class PropertySearchComponent implements OnInit, OnDestroy {
   ) {}
 
   public navigateToFavor(): void {
-    alert('Navigate to favorite items!');
+    this._router.navigate(['favourites']);
   }
 
   public doSearch(): void {
@@ -47,8 +48,8 @@ export class PropertySearchComponent implements OnInit, OnDestroy {
     }
   }
 
-  public defineLocation(): void {
-    alert('define Location');
+  public getFavoriteItems(): void {
+    this.dataSource = localStorage.getItem('favoriteItems');
   }
 
   public navigateToItem(id: number): void {

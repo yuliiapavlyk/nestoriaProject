@@ -4,5 +4,5 @@ export const enum buttonType {
   buttonFavor = 'button-favor',
   buttonAdd = 'button-add',
   buttonGoFavorite = 'button-go-to-favorite',
-  buttonBack = 'button-back-to-search'
+  buttonBack = 'button-back-to-main'
 }
