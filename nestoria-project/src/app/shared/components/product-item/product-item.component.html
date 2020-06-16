@@ -1,9 +1,15 @@
-<div class="main">
-  <div class="content">
-    <div> <img [src]="link" alt="item-image" class="image"></div>
-    <div class="information">
-      <div class="price">Price: {{price}} $</div>
-      <div class="location">Location: {{location}}</div>
-    </div>
+<mat-card class="card">
+  <mat-card-header>
+    <mat-card-title>Location: {{location}}</mat-card-title>
+    <mat-card-subtitle>Price: {{price}} $</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image [src]="link" alt="item-image" class="image">
+  <mat-card-content>
+    <p>
+      {{description}}
+    </p>
+    <div class="button-wrapper">
+    <button mat-stroked-button color="primary" (click)="addToFavorite(id,$event)" >Add to favorite </button>
   </div>
-</div>
+  </mat-card-content>
+</mat-card>

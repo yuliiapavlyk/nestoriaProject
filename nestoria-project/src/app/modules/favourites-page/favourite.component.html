@@ -1,0 +1,17 @@
+<div class="nav">
+  <div>
+    <h2> Favorite items</h2>
+  </div>
+  <div>
+    <app-button (click)="navigateToMain()" [id]="buttonBack" label="Back to main"></app-button>
+  </div>
+</div>
+
+<div class="items-wrapper">
+  <div *ngFor="let product of items" (click)="navigateToItem(product.id)" class="item-wrapper">
+    <app-product-item [id]="product.id" [link]="product.link" [location]="product.location" [price]="product.price"
+      [description]="product.description"></app-product-item>
+    <br>
+  </div>
+</div>
+

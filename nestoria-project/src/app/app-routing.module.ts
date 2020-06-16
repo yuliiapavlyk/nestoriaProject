@@ -2,13 +2,13 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PropertySearchComponent } from './modules/property-search-page/property-search.component';
 import { PropertyListingComponent } from './modules/property-listing-page/property-listing.component';
-import { SearchResultsComponent } from './modules/search-results-page/search-results.component';
+import { FavouriteComponent } from './modules/favourites-page/favourite.component';
 
 
 const routes: Routes = [
   { path: 'home', component: PropertySearchComponent },
-  { path: 'property', component: PropertyListingComponent },
-  { path: 'search-results', component: SearchResultsComponent},
+  { path: 'item/:id', component: PropertyListingComponent },
+  { path: 'favourites', component: FavouriteComponent },
   { path: '**', component: PropertySearchComponent }
 ];
 

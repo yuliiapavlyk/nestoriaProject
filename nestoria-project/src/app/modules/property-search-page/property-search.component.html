@@ -3,7 +3,7 @@
     <h2>Property Cross</h2>
   </div>
   <div>
-    <app-button (click)="navigateToFavor()" [id]="buttonFavor" label="Faves"></app-button>
+    <app-button (click)="navigateToFavor()" [id]="buttonFavor" label="Favorite"></app-button>
   </div>
 </div>
 
@@ -13,13 +13,17 @@
 </div>
 <br>
 <div class="search-block">
-  <div class="search-item"><input type="text" class="search-input" placeholder="Search..."></div>
+  <div class="search-item">
+    <mat-form-field class="input-wrapper">
+      <input matInput type="text" [(ngModel)]="value" placeholder="Search">
+      <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
   <div class="buttons">
     <div class="button-wrapper">
       <app-button (click)="doSearch()" [id]="buttonSearch" label="Go"></app-button>
-    </div>
-    <div class="button-wrapper">
-      <app-button (click)="defineLocation()" [id]="buttonLocation" label="My location"></app-button>
     </div>
   </div>
 </div>
@@ -35,5 +39,12 @@
 <div *ngIf="isListLocation" class="location-list">
   <p> Please select a location below: </p>
   <div class="result-block">
+  </div>
+</div>
+<div class="items-wrapper">
+  <div *ngFor="let product of products" (click)="navigateToItem(product.id)" class="item-wrapper">
+    <app-product-item [id]="product.id" [link]="product.link" [location]="product.location" [price]="product.price"
+      [description]="product.description"></app-product-item>
+    <br>
   </div>
 </div>

@@ -1,26 +1,15 @@
-.main{
-  display: flex;
-  justify-content: center;
-}
-.content{
-  background: rgb(206, 203, 203);
-  padding: 10px 10px;
-  border: 1px solid gray;
-  width: 60%;
-  height: 300px;
-  display: flex;
-  justify-content: space-between;
-}
+
 .image{
   height: 300px;
   width: 400px;
 }
-.information{
-  width:300px;
-  display: flex;
-  flex-direction: column;
-  font-size: larger;
-  align-items: center;
-  justify-content: center;
+
+.card{
+  height: 450px;
 }
 
+.button-wrapper{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
